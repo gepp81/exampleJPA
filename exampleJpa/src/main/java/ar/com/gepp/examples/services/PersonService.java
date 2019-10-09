@@ -14,7 +14,9 @@ public interface PersonService {
 
     Optional<Person> getById(Long id);
 
-    Page<Person> getAll(Pageable page);
+    Page<Person> getAll(int page, int size);
+
+    Page<Person> getAll(Pageable pageable);
 
     List<Person> getAllBySurename(String surename);
 

@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import ar.com.gepp.examples.entity.Person;
@@ -71,5 +72,36 @@ public class PersonServiceTest {
     public void testGetAllByFilter() {
         List<Person> persons = personService.getAllGTAgeAndFirstname((short) 40, "iana");
         Assertions.assertTrue(persons.size() > 5);
+    }
+
+    @Test
+    @DisplayName("Find with page")
+    public void testGetAllFirstPage() {
+        Page<Person> page = personService.getAll(0, 5);
+        List<Person> persons = page.getContent();
+        Assertions.assertEquals(persons.size(), 5);
+        Person p1 = persons.get(0);
+        Person p2 = persons.get(4);
+
+        Assertions.assertEquals(1l, p1.getId());
+        Assertions.assertEquals(5l, p2.getId());
+        Assertions.assertTrue(page.hasNext());
+
+    }
+
+    @Test
+    @DisplayName("Find with another page")
+    public void testGetAllAnotherPage() {
+        Page<Person> page = personService.getAll(0, 5);
+        Assertions.assertTrue(page.hasNext());
+
+        page = personService.getAll(page.nextPageable());
+        List<Person> persons = page.getContent();
+        
+        Person p1 = persons.get(0);
+        Person p2 = persons.get(4);
+        Assertions.assertEquals(6l, p1.getId());
+        Assertions.assertEquals(10l, p2.getId());
+
     }
 }

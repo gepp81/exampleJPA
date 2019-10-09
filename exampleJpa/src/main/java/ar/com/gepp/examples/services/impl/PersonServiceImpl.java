@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,8 +32,14 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Transactional(readOnly = true)
-    public Page<Person> getAll(Pageable page) {
-        return personRepository.findAll(page);
+    public Page<Person> getAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return personRepository.findAll(pageable);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<Person> getAll(Pageable pageable) {
+        return personRepository.findAll(pageable);
     }
 
     @Transactional(readOnly = true)
