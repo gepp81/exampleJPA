@@ -9,7 +9,7 @@
 	<name>examples</name>
 	<description>examples</description>
 
-<properties>
+	<properties>
 		<java.version>1.8</java.version>
 		<spring.boot>2.1.9.RELEASE</spring.boot>
 	</properties>
@@ -24,6 +24,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<version>${spring.boot}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hsqldb</groupId>
@@ -75,10 +80,10 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.0</version>
 				</plugin>
-							<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

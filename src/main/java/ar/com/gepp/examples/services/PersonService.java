@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import ar.com.gepp.examples.entity.Person;
+import ar.com.gepp.examples.dto.entity.PersonDTO;
 
 public interface PersonService {
 
-    Person save(Person person);
+    PersonDTO save(PersonDTO person);
 
-    Optional<Person> getById(Long id);
+    Optional<PersonDTO> getById(Long id);
 
-    List<Person> getAll();
+    Optional<PersonDTO> getByUsername(String username);
 
-    Page<Person> getAll(int page, int size);
+    List<PersonDTO> getAll();
 
-    Page<Person> getAll(Pageable pageable);
+    Page<PersonDTO> getAll(Pageable pageable);
 
-    List<Person> getAllBySurename(String surename);
+    List<PersonDTO> getAllBySurename(String surename);
 
-    List<Person> getAllGTAgeAndFirstname(Short age, String firstname);
+    List<PersonDTO> getAllGTAgeAndFirstname(Short age, String firstname);
 }
