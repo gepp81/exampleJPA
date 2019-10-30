@@ -1,6 +1,6 @@
 # Example of Spring Boot JPA
 
-<a href='https://travis-ci.org/gepp81/examples/builds/'><img src='https://travis-ci.org/gepp81/examples.svg?branch=master'></a>
+<a href='https://travis-ci.org/gepp81/examples/builds/'><img src='https://travis-ci.org/gepp81/exampleJPA.svg?branch=master'></a>
 
 ## changelog
 
