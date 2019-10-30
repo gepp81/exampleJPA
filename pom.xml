@@ -1,10 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ar.com.gepp.examples</groupId>
 	<artifactId>examplesJpa</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>examples</name>
 	<description>examples</description>
@@ -13,6 +11,20 @@
 		<java.version>1.8</java.version>
 		<spring.boot>2.1.9.RELEASE</spring.boot>
 	</properties>
+
+	<scm>
+		<url>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</url>
+		<connection>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</connection>
+		<developerConnection>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>gepp81-repository</id>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -83,6 +95,15 @@
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.2</version>
+					<configuration>
+						<tagBase>
+							file:///c:/temp/mvn/
+						</tagBase>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>

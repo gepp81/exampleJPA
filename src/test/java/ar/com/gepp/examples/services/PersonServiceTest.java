@@ -45,6 +45,34 @@ public class PersonServiceTest {
         return person;
     }
 
+    @DisplayName("Get by Id")
+    @Test
+    public void getById() {
+        Optional<PersonDTO> person = personService.getById(1l);
+        Assertions.assertNotNull(person.get());
+    }
+
+    @DisplayName("Get by Id no exists")
+    @Test
+    public void getByIdNotExist() {
+        Optional<PersonDTO> person = personService.getById(-1l);
+        Assertions.assertFalse(person.isPresent());
+    }
+
+    @DisplayName("Get by username no exists")
+    @Test
+    public void getByUsernameNotExist() {
+        Optional<PersonDTO> person = personService.getByUsername("-1");
+        Assertions.assertFalse(person.isPresent());
+    }
+
+    @DisplayName("Get all")
+    @Test
+    public void getAll() {
+        List<PersonDTO> persons = personService.getAll();
+        Assertions.assertFalse(persons.isEmpty());
+    }
+
     @DisplayName("Save a person with duplicate username")
     @Test
     public void testSavePersonDuplicateUsername() {
