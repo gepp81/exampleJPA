@@ -13,9 +13,9 @@
 	</properties>
 
 	<scm>
-		<url>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</url>
-		<connection>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</connection>
-		<developerConnection>scm:git:https://guillermopidote@bitbucket.org/guillermopidote/examplejpa.git</developerConnection>
+		<url>scm:git:https://github.com/gepp81/exampleJPA.git</url>
+		<connection>scm:git:https://github.com/gepp81/exampleJPA.git</connection>
+		<developerConnection>scm:git:https://github.com/gepp81/exampleJPA.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
