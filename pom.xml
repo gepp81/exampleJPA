@@ -102,7 +102,7 @@
 					<configuration>
 						<goal>clean install</goal>
 						<username>gepp81</username>
-						<password>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</password>
+						<password>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</password>
 						<tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
 						<tagBase>
 							https://github.com/gepp81/exampleJPA/tags
