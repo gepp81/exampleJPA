@@ -102,7 +102,7 @@
 					<configuration>
 						<goal>clean install</goal>
 						<username>gepp81</username>
-						<password>catalina08pi</password>
+						<password>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</password>
 						<tagNameFormat>@{project.version}</tagNameFormat>
 						<tagBase>
 							https://github.com/gepp81/exampleJPA/tags
