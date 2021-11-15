@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ar.com.gepp.examples</groupId>
 	<artifactId>examplesJpa</artifactId>
-	<version>0.0.8</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>examples</name>
 	<description>examples</description>
@@ -16,15 +16,15 @@
 		<url>scm:git:https://github.com/gepp81/exampleJPA.git</url>
 		<connection>scm:git:https://github.com/gepp81/exampleJPA.git</connection>
 		<developerConnection>scm:git:https://github.com/gepp81/exampleJPA.git</developerConnection>
-		<tag>examplesJpa-0.0.8</tag>
+		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
+	<!--distributionManagement>
 		<repository>
 			<id>gepp81-repository</id>
 			<url>file:///home/gupidote/Público/mvn-repo</url>
 		</repository>
-	</distributionManagement>
+	</distributionManagement-->
 
 	<dependencies>
 		<dependency>
@@ -102,7 +102,7 @@
 					<configuration>
 						<goal>clean install</goal>
 						<username>gepp81</username>
-						<password>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</password>
+						<password>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</password>
 						<tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
 						<tagBase>
 							https://github.com/gepp81/exampleJPA/tags
